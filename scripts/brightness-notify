@@ -4,11 +4,7 @@
 sleep 0.2
 
 # Get the brightness percentage:
-BRIGHTNESS_VALUE=$(xbacklight -get)
-
-# Round the brightness percentage:
-LC_ALL=C
-BRIGHTNESS_VALUE=$(printf "%.*f\n" 0 $BRIGHTNESS_VALUE)
+BRIGHTNESS_VALUE=$(light)
 
 # Kill previous notifications so the brightness notifications don't pile up:
 killall -q mate-notification-
