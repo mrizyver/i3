@@ -143,17 +143,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#make screenshot
+bindsym --release $mod+Shift+s exec gnome-screenshot -a -c
+
 # Lock screen:
 bindsym $mod+Ctrl+l exec i3lock
 
 # Display startup script:
-exec --no-startup-id  bash setxkbmap -option caps:swapescape
-
+exec --no-startup-id  bash setxkbmap -option caps:swapescape 
 exec --no-startup-id  bash pidgin 
-
-exec --no-startup-id  bash ~/.config/i3/scripts/display-startup
-
-exec --no-startup-id bash ~/.config/i3/scripts/keyboard_config
+exec --no-startup-id  bash ~/.config/i3/scripts/display-startup 
+exec --no-startup-id  bash ~/.config/i3/scripts/keyboard_config
+exec --no-startup-id  bash ~/.config/i3/scripts/synclient_config
 
 bar {
         status_command i3status
