@@ -144,7 +144,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #make screenshot
-bindsym --release $mod+Shift+s exec gnome-screenshot -a -c
+bindsym --release $mod+Shift+s scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 
 # Lock screen:
 bindsym $mod+Ctrl+l exec i3lock
@@ -154,7 +154,7 @@ exec --no-startup-id  bash setxkbmap -option caps:swapescape
 exec --no-startup-id  bash pidgin 
 exec --no-startup-id  bash ~/.config/i3/scripts/display-startup 
 exec --no-startup-id  bash ~/.config/i3/scripts/keyboard_config
-exec --no-startup-id  bash ~/.config/i3/scripts/synclient_config
+exec --no-startup-id  bash ~/.config/i3/scripts/synclient_config.sh
 
 bar {
         status_command i3status
